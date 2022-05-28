@@ -1,0 +1,153 @@
+div {
+  margin: 0 auto 100px auto;
+}
+
+.animation-one {
+  width: 50%;
+  position: relative;
+  height: 1.4em;
+  padding: .2em;
+  border: 1px solid mediumturquoise;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.animation-one::before {
+  content: attr(data-content);
+  display: inline-block;
+  position: absolute;
+  left: .2em;
+  width: 0;
+  height: 1em;
+  padding: .2em;
+  background: seagreen;
+  border-radius: 3px;
+  animation: timing 5s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes timing {
+  0% {}
+
+  100% {
+    width: 90%;
+  }
+}
+
+.animation-two {
+  width: 8em;
+  height: 8em;
+  border: 1px solid black;
+  position: relative;
+}
+
+.animation-two::before {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  background: red;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: timing-two 7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes timing-two {
+  0% {}
+
+  25% {
+    top: 7em;
+    left: 1.5em;
+  }
+
+  40% {
+    top: 5em;
+    left: 3em;
+  }
+
+  43% {
+    top: 4.9em;
+    left: 3.25em;
+  }
+
+  55% {
+    top: 7em;
+    left: 4em;
+  }
+
+  67% {
+    top: 5.5em;
+    left: 5em;
+  }
+
+  70% {
+    top: 5.6em;
+    left: 5.25em;
+  }
+
+  83% {
+    top: 7em;
+    left: 6em;
+  }
+
+  90% {
+    top: 6.5em;
+    left: 6.5em;
+  }
+
+  93% {
+    top: 6.5em;
+    left: 6.7em;
+  }
+
+  100% {
+    top: 7em;
+    left: 7em;
+  }
+}
+
+.animation-three {
+  width: 95%;
+  position: relative;
+  height: 2.4em;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+.animation-three::before {
+  content: attr(data-content);
+  display: inline-block;
+  position: absolute;
+  left: .2em;
+  width: 5%;
+  height: 2em;
+  padding: .2em;
+  background: yellow;
+  border-radius: 3px;
+  animation: timing-three 5s;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+
+.animation-three:hover::before {
+  animation: timing-three 5s;
+  animation-play-state: running;
+  animation-iteration-count: infinite;
+}
+
+@keyframes timing-three {
+  0% {  
+    width: 5%;}
+
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 5%;
+  }
+}
